@@ -66,7 +66,7 @@ export default function UserProfile({ userDetail, setUserDetail }) {
           </div>
         </div>
       </div>
-      {/* <UserTweets userDetail={userDetail} /> */}
+      <UserTweets userDetail={userDetail} />
       <EditProfileModal
         isOpen={isOpen}
         handleCloseModal={handleCloseModal}
