@@ -4,7 +4,7 @@ import SideMenu from "../components/SideMenu";
 import Trends from "../components/Trends";
 import UserProfile from "../components/UserProfile";
 import WhoToFollow from "../components/WhoToFollow";
-export default function UserProfilePage({ userDetail }) {
+export default function UserProfilePage({ userDetail, setUserDetail }) {
   return (
     <div className="userProfilePage">
       <div className="left-section">
@@ -13,7 +13,7 @@ export default function UserProfilePage({ userDetail }) {
       </div>
       <div className="user-section">
         <UserHeader userDetail={userDetail} />
-        <UserProfile userDetail={userDetail} />
+        <UserProfile userDetail={userDetail} setUserDetail={setUserDetail} />
       </div>
       <div className="right-section">
         {" "}

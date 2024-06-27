@@ -7,7 +7,8 @@ import UserProfilePage from "./pages/UserProfilePage";
 import { useState } from "react";
 import { userProfileDetails } from "./userProfileDetails";
 function App() {
-  const [userDetail, setUSerDetail] = useState(userProfileDetails[0]);
+  const [userDetail, setUserDetail] = useState({ ...userProfileDetails[0] });
+  console.log("initialUserDetail: ", userDetail);
 
   return (
     <BrowserRouter>
@@ -21,7 +22,12 @@ function App() {
         <Route
           exact
           path="/profile"
-          element={<UserProfilePage userDetail={userDetail} />}
+          element={
+            <UserProfilePage
+              userDetail={userDetail}
+              setUserDetail={setUserDetail}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>

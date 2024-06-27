@@ -3,13 +3,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import UserTweets from "./UserTweets";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import EditProfileModal from "./EditProfileModal";
 
-export default function UserProfile({ userDetail }) {
+export default function UserProfile({ userDetail, setUserDetail }) {
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const joinDate = (d) => {
     const date = new Date(d);
     const options = { year: "numeric", month: "long" };
     return date.toLocaleDateString("en-US", options);
+  };
+  const handleShowModal = () => {
+    setIsOpen(true);
+  };
+  const handleCloseModal = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -23,7 +32,9 @@ export default function UserProfile({ userDetail }) {
           <div className="userProfilePic">
             <img src={userDetail.profilePicture} alt="User Profile" />
           </div>
-          <button className="edit-profile-button">Edit profile</button>
+          <button className="edit-profile-button" onClick={handleShowModal}>
+            Edit profile
+          </button>
         </div>
         <div className="username">
           <p>{userDetail.username}</p>
@@ -56,6 +67,12 @@ export default function UserProfile({ userDetail }) {
         </div>
       </div>
       {/* <UserTweets userDetail={userDetail} /> */}
+      <EditProfileModal
+        isOpen={isOpen}
+        handleCloseModal={handleCloseModal}
+        userDetail={userDetail}
+        setUserDetail={setUserDetail}
+      />
     </div>
   );
 }

@@ -7,7 +7,7 @@ const LoginForm = ({ email }) => {
   const {
     register,
     handleSubmit,
-    formState: { isValid },
+    formState: { errors, isValid },
   } = useForm({
     defaultValues: { email: { email }, password: "" },
     mode: "all",
@@ -19,7 +19,7 @@ const LoginForm = ({ email }) => {
     axios
       .post("https://reqres.in/api/users", formData)
       .then((res) => {
-        console.log(res.data);
+        console.log("Login Successful! : ", res.data);
         navigate("/home");
       })
       .catch((err) => console.warn(err));
@@ -30,21 +30,36 @@ const LoginForm = ({ email }) => {
       <div>
         <h2>Enter your password</h2>
       </div>
-
+      <label style={{ color: "gray" }} htmlFor="email">
+        Email
+      </label>
       <input
+        style={{ color: "gray" }}
         className="input-field"
         type="email"
         value={email}
         readOnly
         data-cy="secondEmail"
       />
+      <label htmlFor="password">Password</label>
       <input
         className="input-field"
         type="password"
         data-cy="pswd"
         placeholder="Password"
-        {...register("password", { required: "Enter your password" })}
+        {...register("password", {
+          required: "Password field cannot be left blank",
+          minLength: {
+            value: 8,
+            message: "Password must be at least 8 characters.",
+          },
+        })}
       />
+      {errors.password && (
+        <p style={{ color: "rgb(13, 141, 232)" }} className="error-message">
+          {errors.password.message}
+        </p>
+      )}
       <button
         className="signup-buttons"
         type="submit"

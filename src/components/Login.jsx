@@ -34,6 +34,7 @@ const Login = ({ onNext }) => {
         style={{ display: "flex", flexDirection: "column" }}
         onSubmit={handleSubmit(handleForwardClick)}
       >
+        <label htmlFor="email">E-mail</label>
         <input
           className="input-field"
           data-cy="email"
