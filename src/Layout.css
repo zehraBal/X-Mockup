@@ -348,7 +348,7 @@ body {
   margin-left: 10px;
 }
 
-.tweetInput input {
+.tweetInput textarea {
   width: 100%;
   padding: 10px;
   font-size: 18px;
@@ -357,6 +357,7 @@ body {
   resize: none;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0);
+  color: white;
 }
 
 .reply-sec {

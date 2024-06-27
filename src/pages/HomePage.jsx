@@ -16,7 +16,7 @@ export default function Homepage({ userDetail }) {
       <div className="middle-section">
         <Header />
         <PostTweet userDetail={userDetail} />
-        <Tweets />
+        {/*<Tweets />*/}
       </div>
       <div className="right-section">
         {" "}
