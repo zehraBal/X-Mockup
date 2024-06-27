@@ -6,14 +6,19 @@ export default function UserHeader({ userDetail }) {
   const navigate = useNavigate();
   return (
     <div className="userHeader">
-      <button
-        onClick={() => {
-          navigate("/home");
-        }}
-      >
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </button>
-      {userDetail.username}
+      <div>
+        <button
+          className="backBtn"
+          onClick={() => {
+            navigate("/home");
+          }}
+        >
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </button>
+      </div>
+      <div>
+        <h5> {userDetail.username}</h5>
+      </div>
     </div>
   );
 }

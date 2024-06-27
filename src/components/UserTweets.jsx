@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { differenceInWeeks } from "date-fns";
-export default function UserTweets() {
+export default function UserTweets({ userDetail }) {
   const [userTweets, setUserTweets] = useState([]);
   useEffect(() => {
     const options = {
@@ -42,6 +42,14 @@ export default function UserTweets() {
         return (
           <div key={userTweets.tweet_id}>
             <div key={tweet.tweet_id} className="tweet">
+              <div className="userDetails">
+                <div>
+                  <img src={userDetail.profilePicture} />
+                </div>
+                <div>{userDetail.username}</div>
+                <div>{userDetail.userat}</div>
+                <div>.{weeks(tweet.creation_date)}h </div>
+              </div>
               <p>{tweet.text}</p>
               {tweet.media_url && tweet.media_url.length > 0 && (
                 <img

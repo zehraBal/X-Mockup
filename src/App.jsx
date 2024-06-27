@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<MainPage />} />
-        <Route
+        {/* <Route
           exact
           path="/home"
           element={<Homepage userDetail={userDetail} />}
@@ -22,7 +22,7 @@ function App() {
           exact
           path="/profile"
           element={<UserProfilePage userDetail={userDetail} />}
-        />
+        />*/}
       </Routes>
     </BrowserRouter>
   );

@@ -33,7 +33,11 @@ export default function MainPageButtonsSection() {
       </div>
       <div className="loginButton-section">
         <div>Already have an account?</div>
-        <button className="login-button" onClick={handleShowModal}>
+        <button
+          className="login-button"
+          onClick={handleShowModal}
+          data-cy="firstLogin"
+        >
           Login
         </button>
       </div>

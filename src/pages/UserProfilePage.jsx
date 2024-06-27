@@ -1,4 +1,4 @@
-import UserHeader from "../components/Header";
+import UserHeader from "../components/UserHeader";
 import HomeFooter from "../components/HomeFooter";
 import SideMenu from "../components/SideMenu";
 import Trends from "../components/Trends";
@@ -11,7 +11,7 @@ export default function UserProfilePage({ userDetail }) {
         {" "}
         <SideMenu userDetail={userDetail} />
       </div>
-      <div className="middle-section">
+      <div className="user-section">
         <UserHeader userDetail={userDetail} />
         <UserProfile userDetail={userDetail} />
       </div>

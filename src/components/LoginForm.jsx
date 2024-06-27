@@ -31,14 +31,26 @@ const LoginForm = ({ email }) => {
         <h2>Enter your password</h2>
       </div>
 
-      <input className="input-field" type="email" value={email} readOnly />
+      <input
+        className="input-field"
+        type="email"
+        value={email}
+        readOnly
+        data-cy="secondEmail"
+      />
       <input
         className="input-field"
         type="password"
+        data-cy="pswd"
         placeholder="Password"
         {...register("password", { required: "Enter your password" })}
       />
-      <button className="signup-buttons" type="submit" disabled={!isValid}>
+      <button
+        className="signup-buttons"
+        type="submit"
+        disabled={!isValid}
+        data-cy="secondLogin"
+      >
         Login
       </button>
       <p style={{ cursor: "pointer" }}>Did you forget your password?</p>

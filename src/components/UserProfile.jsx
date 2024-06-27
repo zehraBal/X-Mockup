@@ -55,7 +55,7 @@ export default function UserProfile({ userDetail }) {
           </div>
         </div>
       </div>
-      {/* <UserTweets />*/}
+      <UserTweets userDetail={userDetail} />
     </div>
   );
 }

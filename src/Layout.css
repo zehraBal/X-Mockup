@@ -15,7 +15,7 @@ body {
   display: flex;
   margin: 0;
   border-bottom: 1px solid gray;
-  position: relative; /* underline divi için relative pozisyon */
+  position: relative;
 }
 
 .header-com {
@@ -210,9 +210,6 @@ body {
 .custom-modal .modal-content {
   background-color: black;
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .custom-modal .modal-title {
   font-size: 2.5rem;
@@ -239,21 +236,24 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px 40px; /* İçerik dolgusu */
+  padding: 20px 40px;
 }
 
 .custom-modal .modal-footer {
-  border-top: none; /* Alt çizgiyi kaldırma */
+  border-top: none;
   display: flex;
-  justify-content: center; /* Butonları ortalama */
+  justify-content: center;
 }
 
 .custom-modal .btn-secondary {
-  background-color: #6c757d; /* İkincil buton rengi */
+  display: none;
 }
 
-.custom-modal .btn-secondary:hover {
-  background-color: #5a6268; /* İkincil buton hover rengi */
+.btn-close {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  background: #dee2e6 var(--bs-btn-close-bg) center / 1em auto no-repeat;
 }
 
 .login-content,
@@ -478,14 +478,13 @@ body {
 }
 
 .trendTopics-section {
-  width: 350px;
+  max-width: 250px;
   height: max-content;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid gray;
-  margin-right: 2rem;
 }
 
 .topic {
@@ -516,11 +515,10 @@ body {
 }
 .followRec {
   margin-top: 20px;
-  width: 350px;
+  width: 250px;
   border: 1px solid gray;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0);
-  margin-right: 2rem;
 }
 
 .follow {
@@ -552,9 +550,9 @@ body {
   }
 }
 .homeFooter {
+  width: 250px;
   margin-top: 20px;
   color: gray;
-  width: 350px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -563,6 +561,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 1rem;
 }
 
 .dropdown-toggle-custom {
@@ -571,8 +570,8 @@ body {
 
 .userProfile-section {
   margin: 0;
+  margin-top: 55px;
   padding: 0;
-  width: 100vw;
   background-color: black;
   color: white;
   display: flex;
@@ -624,6 +623,8 @@ body {
   height: 34px;
   background-color: rgba(0, 0, 0, 0);
   color: white;
+  border: 1px solid gray;
+  border-radius: 20px;
   :hover {
     background-color: rgb(62, 65, 68);
   }
@@ -648,12 +649,59 @@ body {
   cursor: pointer;
   border-bottom: 1px solid gray;
 }
+.userHeader {
+  max-width: 598px;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid gray;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+}
+.backBtn {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  padding: 10px;
+  :hover {
+    background-color: #383838;
+    border: 0px solid black;
+    border-radius: 100%;
+    padding: 10px;
+  }
+}
+.userProfilePage {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.user-section {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 38px;
+}
+.login-form-sec {
+  display: flex;
+}
 
 @media (max-width: 768px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
   .mainPage-container,
   .homepage-container {
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
   }
   .logo-container,
   .mainPageContents-container {
@@ -678,26 +726,17 @@ body {
   }
 
   .trendTopics-section,
+  .homeFooter,
   .followRec {
     display: none;
   }
 }
-.userHeader {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.userProfilePage {
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+
 @media (max-width: 550px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
   .terms-section,
   .or-section,
   .signup-buttons,
@@ -749,6 +788,7 @@ body {
     width: 480px;
   }
   .postTweet-section,
+  .homeFooter,
   .followRec,
   .trendTopics-section {
     display: none;
