@@ -1,5 +1,5 @@
 describe("Login Formu", () => {
-  it("Login butonu çalışıyor mu testi", () => {
+  it("Login formu input ve butonlar icin test ", () => {
     cy.visit("http://localhost:5173/");
     cy.get('[data-cy="firstLogin"]').should("not.be.disabled").click();
     cy.get('[data-cy="email"]').type("test@example.com");
