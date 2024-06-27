@@ -5,7 +5,7 @@ const Login = ({ onNext }) => {
     register,
     handleSubmit,
     formState: { errors, isValid },
-  } = useForm();
+  } = useForm({ mode: "all" });
 
   const handleForwardClick = (data) => {
     onNext(data.email);
@@ -48,7 +48,9 @@ const Login = ({ onNext }) => {
           })}
         />
         {errors.email && (
-          <p className="error-message">{errors.email.message}</p>
+          <p style={{ color: "rgb(13, 141, 232)" }} className="error-message">
+            {errors.email.message}
+          </p>
         )}
         <button
           type="submit"

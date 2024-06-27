@@ -37,7 +37,7 @@ body {
   position: absolute;
   bottom: 0;
   height: 4px;
-  width: 40px; /* Width set to 30px */
+  width: 40px;
   background-color: rgb(26, 140, 216);
   border-radius: 2px;
   transition: left 0.3s;
@@ -163,40 +163,6 @@ body {
   font-size: 14px;
 }
 
-/*
-.custom-modal .modal-content {
-  background-color: black;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.custom-modal .modal-header {
-  border-bottom: none;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-}
-
-.custom-modal .modal-header img {
-  max-width: 28.76px; 
-  height: 26; 
-}
-.custom-modal .modal-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 40px; 
-}
-
-.custom-modal .modal-header .close {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  color: white;
-}*/
 .input-field {
   color: white;
   width: 300px;
@@ -215,19 +181,19 @@ body {
   font-size: 2.5rem;
 }
 .custom-modal .modal-header {
-  border-bottom: none; /* Başlık alt çizgisini kaldırma */
+  border-bottom: none;
   display: flex;
-  justify-content: center; /* Başlığı ortala */
-  align-items: center; /* Dikey ortalama */
-  position: relative; /* Kapatma butonu için konumlandırma */
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 .custom-modal {
   border: 1px solid gray;
 }
 
 .custom-modal .modal-header img {
-  max-width: 28.76px; /* Görüntü genişliği */
-  height: 26px; /* Görüntü yüksekliği */
+  max-width: 28.76px;
+  height: 26px;
 }
 
 .custom-modal .modal-body {
