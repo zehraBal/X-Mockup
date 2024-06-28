@@ -11,9 +11,15 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PostTweet from "./PostTweet";
+import PostTweetModal from "./PostTweetModal";
 export default function SideMenu({ userDetail }) {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const handleDismiss = () => {
+    setShowModal(false);
+  };
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -23,6 +29,7 @@ export default function SideMenu({ userDetail }) {
         <img src="/src/assets/logo-white.png" height="30" width="30" />
       </div>
       <div
+        data-cy="homeBtn"
         className="icons"
         onClick={() => {
           navigate("/home");
@@ -45,15 +52,22 @@ export default function SideMenu({ userDetail }) {
       <div className="icons">
         <FontAwesomeIcon icon={faUser} style={{ fontSize: "27px" }} />
       </div>
+
       <div className="icons">
         <img src="/src/assets/more.png" height="27" width="27" />
       </div>
-      <div className="post">
+      <div
+        data-cy="postTweet"
+        className="post"
+        onClick={() => {
+          setShowModal(true);
+        }}
+      >
         <div>
           <FontAwesomeIcon icon={faPlus} style={{ fontSize: "27px" }} />
         </div>
       </div>
-      <div className="dropup-container" onClick={toggleMenu}>
+      <div data-cy="dropUp" className="dropup-container" onClick={toggleMenu}>
         <img
           src={userDetail.profilePicture}
           alt="Clickable"
@@ -65,6 +79,7 @@ export default function SideMenu({ userDetail }) {
           <div className="dropup-menu">
             <div className="menu-item">Add an existing account</div>
             <div
+              data-cy="logOut"
               className="menu-item"
               onClick={() => {
                 navigate("/");
@@ -75,6 +90,11 @@ export default function SideMenu({ userDetail }) {
           </div>
         )}
       </div>
+      <PostTweetModal
+        showModal={showModal}
+        handleDismiss={handleDismiss}
+        userDetail={userDetail}
+      />
     </div>
   );
 }

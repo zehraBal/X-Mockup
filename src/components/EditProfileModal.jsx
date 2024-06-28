@@ -21,17 +21,23 @@ export default function EditProfileModal({
       username: data.username,
       description: data.description,
     });
+    handleCloseModal();
   };
 
   return (
     <Modal
+      data-cy="editProfileModal"
       dialogClassName="custom-editProfileModal"
       show={isOpen}
       onHide={handleCloseModal}
     >
       <Modal.Header closeButton>
         <h2>Edit Profile</h2>
-        <button className="editProfile-save" onClick={handleSubmit(onSubmit)}>
+        <button
+          data-cy="saveBtn"
+          className="editProfile-save"
+          onClick={handleSubmit(onSubmit)}
+        >
           Save
         </button>
       </Modal.Header>
@@ -39,12 +45,14 @@ export default function EditProfileModal({
         <form className="editProfileModal-form">
           <label htmlFor="username">Name</label>
           <input
+            data-cy="nameInput"
             type="text"
             name="username"
             {...register("username", { required: true })}
           />
           <label htmlFor="description">Bio</label>
           <input
+            data-cy="bioInput"
             type="text"
             name="description"
             {...register("description", { required: true })}

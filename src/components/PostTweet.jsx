@@ -54,6 +54,7 @@ export default function PostTweet({ userDetail }) {
     <div className="postTweet-section">
       <div className="sidepp">
         <img
+          data-cy="profilePic"
           src={userDetail.profilePicture}
           alt=""
           onClick={() => navigate("/profile")}

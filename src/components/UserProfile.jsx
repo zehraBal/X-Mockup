@@ -32,15 +32,19 @@ export default function UserProfile({ userDetail, setUserDetail }) {
           <div className="userProfilePic">
             <img src={userDetail.profilePicture} alt="User Profile" />
           </div>
-          <button className="edit-profile-button" onClick={handleShowModal}>
+          <button
+            data-cy="editProfileBtn"
+            className="edit-profile-button"
+            onClick={handleShowModal}
+          >
             Edit profile
           </button>
         </div>
         <div className="username">
-          <p>{userDetail.username}</p>
+          <p data-cy="username">{userDetail.username}</p>
           <p style={{ color: "gray" }}>{userDetail.userat}</p>
         </div>
-        <div className="description" style={{ color: "gray" }}>
+        <div data-cy="bio" className="description" style={{ color: "gray" }}>
           {userDetail.description}
         </div>
         <div className="joined" style={{ color: "gray" }}>

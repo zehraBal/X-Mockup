@@ -56,7 +56,11 @@ const LoginForm = ({ email }) => {
         })}
       />
       {errors.password && (
-        <p style={{ color: "rgb(13, 141, 232)" }} className="error-message">
+        <p
+          data-cy="passwordError"
+          style={{ color: "rgb(13, 141, 232)" }}
+          className="error-message"
+        >
           {errors.password.message}
         </p>
       )}

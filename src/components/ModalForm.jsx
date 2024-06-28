@@ -23,7 +23,7 @@ const ModalForm = ({ show, handleClose }) => {
       </Modal.Header>
       <Modal.Body>
         {step === 1 ? (
-          <Login onNext={handleNext} />
+          <Login onForward={handleNext} />
         ) : (
           <div className="loginform-content">
             <LoginForm email={email} />

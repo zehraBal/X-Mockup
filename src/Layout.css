@@ -701,6 +701,37 @@ body {
   border-radius: 20px;
   padding: 5px 30px;
 }
+
+.postTweetModal .modal-content {
+  background-color: black;
+  color: white;
+}
+.postTweetModal {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.postTweetModal .modal-header {
+  border: none;
+  display: flex;
+  justify-content: flex-end;
+}
+.postTweetModal .btn-close {
+  top: 7%;
+}
+.draft {
+  background-color: rgba(0, 0, 0, 0);
+  color: #1da1f2;
+  border: 0 solid black;
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+.draft :hover {
+  background-color: #09014e98;
+}
+.postTweetModal .modal-body {
+  display: flex;
+  margin-bottom: 20px;
+}
 @media (max-width: 768px) {
   .logo {
     width: 50px;

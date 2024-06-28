@@ -8,6 +8,7 @@ export default function UserHeader({ userDetail }) {
     <div className="userHeader">
       <div>
         <button
+          data-cy="back-btn"
           className="backBtn"
           onClick={() => {
             navigate("/home");

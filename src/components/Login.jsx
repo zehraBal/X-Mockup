@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-const Login = ({ onNext }) => {
+const Login = ({ onForward }) => {
   const {
     register,
     handleSubmit,
@@ -8,7 +8,7 @@ const Login = ({ onNext }) => {
   } = useForm({ mode: "all" });
 
   const handleForwardClick = (data) => {
-    onNext(data.email);
+    onForward(data.email);
   };
 
   return (
@@ -49,7 +49,11 @@ const Login = ({ onNext }) => {
           })}
         />
         {errors.email && (
-          <p style={{ color: "rgb(13, 141, 232)" }} className="error-message">
+          <p
+            data-cy="emailError"
+            style={{ color: "rgb(13, 141, 232)" }}
+            className="error-message"
+          >
             {errors.email.message}
           </p>
         )}
