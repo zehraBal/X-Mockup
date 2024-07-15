@@ -12,17 +12,17 @@ export const userProfileDetails = [
   },
   {
     username: "Monkey D. Luffy",
-    profilePicture: "/src/assets/monkey.png",
+    profilePicture: "/monkey.png",
     userat: "@monkeyD",
   },
   {
     username: "Roronoa Zoro",
-    profilePicture: "/src/assets/zoro.jpg",
+    profilePicture: "/zoro.jpg",
     userat: "@zororo",
   },
   {
     username: "Bon Clay",
-    profilePicture: "/src/assets/bon.jpeg",
+    profilePicture: "/bon.jpeg",
     userat: "@okamaway",
   },
 ];

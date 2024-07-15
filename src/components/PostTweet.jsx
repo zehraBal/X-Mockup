@@ -97,20 +97,16 @@ export default function PostTweet({ userDetail }) {
             </div>
             <div className="tweet-actions">
               <FontAwesomeIcon icon={faImage} />
-              <img
-                className="postTweet-img"
-                src="/src/assets/gif.png"
-                alt="GIF"
-              />
+              <img className="postTweet-img" src="/gif.png" alt="GIF" />
               <FontAwesomeIcon icon={faFaceSmile} />
               <img
                 className="postTweet-img"
-                src="/src/assets/calendar.png"
+                src="/calendar.png"
                 alt="Calendar"
               />
               <img
                 className="postTweet-img"
-                src="/src/assets/placeholder.png"
+                src="/placeholder.png"
                 alt="Placeholder"
               />
               <button type="submit" className="post-btn" disabled={!isValid}>

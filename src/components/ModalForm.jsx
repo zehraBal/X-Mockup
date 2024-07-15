@@ -15,11 +15,7 @@ const ModalForm = ({ show, handleClose }) => {
   return (
     <Modal dialogClassName="custom-modal" show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <img
-          className="modal-logo"
-          src="/src/assets/logo-white.png"
-          alt="Modal Logo"
-        />
+        <img className="modal-logo" src="/logo-white.png" alt="Modal Logo" />
       </Modal.Header>
       <Modal.Body>
         {step === 1 ? (

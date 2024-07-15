@@ -15,12 +15,12 @@ const Login = ({ onForward }) => {
     <div className="login-content">
       <h2>Login to X</h2>
       <button className="signup-buttons">
-        <img src="/src/assets/googleIcon.png" />
+        <img src="/googleIcon.png" />
         <span> </span>
         Sign in with Google
       </button>
       <button className="signup-buttons">
-        <img src="/src/assets/appleIcon.png" />
+        <img src="/appleIcon.png" />
         <span> </span>
         Sign in with Apple
       </button>

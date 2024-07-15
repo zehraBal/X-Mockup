@@ -26,7 +26,7 @@ export default function SideMenu({ userDetail }) {
   return (
     <div className="sidemenu">
       <div className="icons">
-        <img src="/src/assets/logo-white.png" height="30" width="30" />
+        <img src="/logo-white.png" height="30" width="30" />
       </div>
       <div
         data-cy="homeBtn"
@@ -54,7 +54,7 @@ export default function SideMenu({ userDetail }) {
       </div>
 
       <div className="icons">
-        <img src="/src/assets/more.png" height="27" width="27" />
+        <img src="/more.png" height="27" width="27" />
       </div>
       <div
         data-cy="postTweet"

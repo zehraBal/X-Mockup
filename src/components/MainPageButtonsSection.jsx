@@ -10,12 +10,12 @@ export default function MainPageButtonsSection() {
   return (
     <>
       <button className="signup-buttons">
-        <img src="/src/assets/googleIcon.png" />
+        <img src="/googleIcon.png" />
         <span> </span>
         Sign up with Google
       </button>
       <button className="signup-buttons">
-        <img src="/src/assets/appleIcon.png" />
+        <img src="/appleIcon.png" />
         <span> </span>
         Sign up with Apple
       </button>
