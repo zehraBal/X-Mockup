@@ -25,7 +25,12 @@ export default function SideMenu({ userDetail }) {
   };
   return (
     <div className="sidemenu">
-      <div className="icons">
+      <div
+        className="icons"
+        onClick={() => {
+          navigate("/home");
+        }}
+      >
         <img src="/logo-white.png" height="30" width="30" />
       </div>
       <div

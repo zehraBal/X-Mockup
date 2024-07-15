@@ -6,7 +6,7 @@ export default function MainPage() {
     <>
       <div className="mainPage-container">
         <div className="logo-container">
-          <img className="logo" src="/src/assets/logo-white.png" alt="x-logo" />
+          <img className="logo" src="/logo-white.png" alt="x-logo" />
         </div>
         <div className="mainPageContents-container">
           <div className="title-section">
