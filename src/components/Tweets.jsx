@@ -8,6 +8,7 @@ import { differenceInWeeks } from "date-fns";
 export default function Tweets() {
   const [tweets, setTweets] = useState([]);
   const [error, setError] = useState(null);
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
     const options = {
@@ -18,7 +19,7 @@ export default function Tweets() {
         limit: "40",
       },
       headers: {
-        "x-rapidapi-key": "95ec85188amsh54a662dc270dd7ep17c336jsnfd8f82d872cf",
+        "x-rapidapi-key": apiKey,
         "x-rapidapi-host": "twitter154.p.rapidapi.com",
       },
     };
@@ -48,17 +49,20 @@ export default function Tweets() {
   return (
     <div className="tweets-section">
       {tweets.map((tweet, index) => (
-        <div key={tweet.tweet_id} className="tweet">
+        <div key={tweet.tweet_id || index} className="tweet">
+          {" "}
+          {/* tweet_id yoksa index kullanılıyor */}
           <div className="userDetails">
             <div>
-              <img src={tweet.user.profile_pic_url} />
+              <img src={tweet.user?.profile_pic_url} alt="User Profile" />{" "}
+              {/* Kullanıcı bilgileri varsa */}
             </div>
-            <div>{tweet.user.name}</div>
-            <div>{tweet.user.username}</div>
-            <div>.{weeks(tweet.creation_date)}h </div>
+            <div>{tweet.user?.name}</div>
+            <div>@{tweet.user?.username}</div>
+            <div>.{weeks(tweet.creation_date)} weeks ago</div>
           </div>
           <p>{tweet.text}</p>
-          {tweet.media_url && tweet.media_url.length > 0 && (
+          {tweet.media_url?.length > 0 /* Medya varsa render ediliyor */ && (
             <img
               className="tweetimg"
               src={tweet.media_url[0]}
@@ -78,7 +82,6 @@ export default function Tweets() {
               <FontAwesomeIcon icon={faHeart} style={{ paddingTop: "4" }} />
               <p>{tweet.favorite_count}</p>
             </div>
-
             <div className="postProp">
               <FontAwesomeIcon
                 icon={faChartSimple}
